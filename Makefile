@@ -1,5 +1,5 @@
 build:
-	go build  -o cmd/api cmd/api.go
+	go build -ldflags '-s -w' -o cmd/api cmd/api.go
 run:build
 	./cmd/api
 
