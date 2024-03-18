@@ -1,6 +1,9 @@
 package main
 
 import (
+	"fmt"
+	"os"
+
 	"github.com/b3nhard/ecommerce-api/internal/app"
 	"github.com/b3nhard/ecommerce-api/internal/config"
 	"github.com/b3nhard/ecommerce-api/internal/database"
@@ -17,5 +20,5 @@ func main() {
 	router.SetupRouter(app, db)
 
 	// Run Application
-	app.App.Listen(":3000")
+	app.App.Listen(fmt.Sprintf("%s:%s", os.Getenv("HOST"), os.Getenv("PORT")))
 }
